@@ -1,3 +1,4 @@
+#### Inicio ####
 ## Sacar datos y hacer modificaciones que aplican para todo; 
 ## fuera de la función para que no sea un proceso que se repita cada vez
 
