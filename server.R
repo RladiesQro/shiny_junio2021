@@ -1,3 +1,4 @@
+#### Inicio ####
 ## Sacar datos y hacer modificaciones que aplican para todo; 
 ## fuera de la función para que no sea un proceso que se repita cada vez
 
@@ -65,6 +66,7 @@ shinyServer(function(input, output, session) {
                                comma(nrow(data_filt() %>% 
                                               filter(estatus_bin == 0)),
                                      digits = 0)),
+                icon = icon("alert", lib = "glyphicon"),
                 color  = "red", fill = TRUE) 
     })
     
@@ -81,6 +83,7 @@ shinyServer(function(input, output, session) {
                                comma(nrow(data_filt() %>% 
                                               filter(altavoz_bin == 1)),
                                      digits = 0)),
+                icon = icon("volume-up"),
                 color  = "green", fill = TRUE) 
     })
     
@@ -137,6 +140,7 @@ shinyServer(function(input, output, session) {
             )
     })
     
+    # Gráfica que se modifica según la variable que se quiera graficar (establecida en un selector)
     output$plot <- renderPlot(
         {
             data_filt() %>% 
@@ -300,7 +304,7 @@ shinyServer(function(input, output, session) {
                 "Altavoz" = altavoz,
                 "Estatus WIFI" = estatus_conectividad
             )  %>% 
-            datatable(
+            datatable( 
                 rownames = FALSE,
                 filter = "top",
                 extensions = c("KeyTable", "Buttons"),

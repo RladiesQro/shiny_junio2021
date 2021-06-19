@@ -1,3 +1,4 @@
+## Paqueteria ##
 library(shiny)
 library(shinydashboard)
 library(shinyWidgets)
@@ -13,7 +14,7 @@ library(DT)
 
 
 
-
+##### Funcion del encabezado ####
 header <- dashboardHeader(
     title = tags$p(
         tags$img(src = 'rladiesqro.png', height = '64', width = '64'),
@@ -32,8 +33,9 @@ header <- dashboardHeader(
 )
 
 
+#### Funcion de barra lateral ####
 sidebar <- dashboardSidebar(
-    sidebarMenu(
+    sidebarMenu( #### Que sea un menu
         tags$style(HTML(".sidebar-menu li a { font-size: 1.5rem; }")),
         id = "sidebar", 
         br(),
@@ -46,8 +48,9 @@ sidebar <- dashboardSidebar(
     )
 )
 
+#### Estructura dek cuerpo ####
 body <- dashboardBody(
-    tabItems(
+    tabItems( ## ]El item de cada tab establecido
         
         # id = "body",
         
@@ -166,7 +169,9 @@ body <- dashboardBody(
     )
 )
 
-shinyUI(
+
+#### Llamar todo lo anterior
+shinyUI( 
     dashboardPage(
         header, 
         sidebar, 
